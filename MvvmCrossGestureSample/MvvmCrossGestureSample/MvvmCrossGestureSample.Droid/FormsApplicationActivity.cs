@@ -3,6 +3,7 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
+using System;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
@@ -23,7 +24,14 @@ namespace MvvmCrossGestureSample.Droid
 
             base.OnCreate(bundle);
 
+            // Type seems to be Android.App.Application
+            Console.WriteLine($"Content type: {Xamarin.Forms.Forms.Context.GetType()} ({Xamarin.Forms.Forms.Context.GetType().Assembly})");
+
+            // This line throws an InvalidCastException
             MR.Gestures.Android.Settings.LicenseKey = "ALZ9-BPVU-XQ35-CEBG-5ZRR-URJQ-ED5U-TSY8-6THP-3GVU-JW8Z-RZGE-CQW6";
+
+            // This cast throws the same exception
+            Console.WriteLine($"Application name: {((Activity)Xamarin.Forms.Forms.Context).Title}");
 
             Xamarin.Essentials.Platform.Init(this, bundle);
         }
