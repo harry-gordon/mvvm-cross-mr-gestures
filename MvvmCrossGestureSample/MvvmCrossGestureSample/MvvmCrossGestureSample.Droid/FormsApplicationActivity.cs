@@ -11,7 +11,7 @@ using MvvmCross.Forms.Platforms.Android.Views;
 
 namespace MvvmCrossGestureSample.Droid
 {
-    [Activity(Label = "FormsApplicationActivity",
+    [Activity(Label = "GestureSample",
               ScreenOrientation = ScreenOrientation.Portrait,
               LaunchMode = LaunchMode.SingleTask)]
     public class FormsApplicationActivity : MvxFormsAppCompatActivity
